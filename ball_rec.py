@@ -65,7 +65,7 @@ while cam.isOpened():
     cnts_green = get_cnts(hsv, np.array([64,100,100]), np.array([86,255,255]))
     draw(cnts_green, frame)
     
-    #it can work better but I don't know how
+    #it can be better but I don't know how
     
     if (get_coords(cnts_blue) > get_coords(cnts_yellow)):
         if (get_coords(cnts_yellow) > get_coords(cnts_green)):
@@ -84,8 +84,6 @@ while cam.isOpened():
             cv2.putText(frame, "green, blue, yellow", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255))
         else:
             cv2.putText(frame, "green, yellow, blue", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255))
-    
-    # cv2.putText(frame, f"{get_coords(cnts_blue)}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255))
     
     # cv2.imshow("Mask", mask)
     cv2.imshow("Camera", frame)
